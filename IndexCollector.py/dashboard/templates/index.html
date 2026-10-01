@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IndexCollector Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <main class="dashboard">
+    <header>
+      <p class="eyebrow">LOCAL COLLECTOR CONTROL</p>
+      <h1>IndexCollector Dashboard</h1>
+      <p class="subtitle">Start the collector, check its state, and view its latest output.</p>
+    </header>
+
+    <section class="card controls" aria-label="Collector controls">
+      <div>
+        <label for="mode">Collection mode</label>
+        <select id="mode">
+          <option value="historical">Historical candle import</option>
+          <option value="live">Live session quote (not 5-minute candles)</option>
+          <option value="mock">Mock data (no API)</option>
+        </select>
+      </div>
+      <div id="date-range">
+        <label>Historical date range</label>
+        <div class="date-inputs">
+          <input id="from-date" type="date" aria-label="Historical start date">
+          <span>to</span>
+          <input id="to-date" type="date" aria-label="Historical end date">
+        </div>
+        <small>Leave blank to import the previous year through yesterday.</small>
+      </div>
+      <div class="buttons">
+        <button id="start-button" class="start">Start</button>
+        <button id="stop-button" class="stop">Stop</button>
+        <button id="refresh-button" class="secondary">Refresh status</button>
+      </div>
+    </section>
+
+    <section class="card status-card" aria-live="polite">
+      <div class="status-heading">
+        <h2>Status</h2>
+        <span id="status-badge" class="badge stopped">Stopped</span>
+      </div>
+      <dl>
+        <div><dt>Mode</dt><dd id="mode-value">—</dd></div>
+        <div><dt>Process ID</dt><dd id="pid-value">—</dd></div>
+        <div><dt>Started</dt><dd id="started-value">—</dd></div>
+      </dl>
+      <p id="message" class="message">Checking collector status…</p>
+    </section>
+
+    <section class="card logs-card">
+      <div class="status-heading"><h2>Currently running / latest output</h2></div>
+      <pre id="logs">Loading…</pre>
+    </section>
+  </main>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

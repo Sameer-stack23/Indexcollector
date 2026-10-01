@@ -1,0 +1,24 @@
+:root { color-scheme: dark; font-family: "Segoe UI", sans-serif; background: #0b1220; color: #e7edf7; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+.dashboard { max-width: 900px; margin: 0 auto; padding: 48px 24px; }
+h1, h2, p { margin-top: 0; }
+h1 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 8px; }
+h2 { margin-bottom: 0; font-size: 1.1rem; }
+.eyebrow { color: #72a7ff; font-size: .75rem; font-weight: 700; letter-spacing: .13em; margin-bottom: 10px; }
+.subtitle { color: #aab7cc; }
+.card { background: #121d31; border: 1px solid #273956; border-radius: 14px; padding: 24px; margin-top: 20px; box-shadow: 0 16px 32px #0003; }
+.controls { display: flex; justify-content: space-between; gap: 24px; align-items: end; }
+label { display: block; color: #aab7cc; font-size: .85rem; margin-bottom: 8px; }
+select, input, button { border-radius: 8px; font: inherit; padding: 10px 14px; }
+select, input { min-width: 220px; background: #0b1220; color: #e7edf7; border: 1px solid #445a7d; }
+.date-inputs { align-items: center; display: flex; gap: 8px; }.date-inputs input { min-width: 145px; } small { color: #aab7cc; display: block; margin-top: 7px; }
+.buttons { display: flex; gap: 10px; flex-wrap: wrap; }
+button { border: 0; color: white; cursor: pointer; font-weight: 600; }
+button:disabled { cursor: not-allowed; opacity: .45; }
+.start { background: #16824b; }.stop { background: #bd3c43; }.secondary { background: #405675; }
+.status-heading { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.badge { border-radius: 999px; font-size: .8rem; font-weight: 700; padding: 6px 10px; }.running { background: #123d29; color: #74e0a5; }.stopped { background: #3a2730; color: #f3a5b5; }
+dl { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }.status-card dl { margin: 24px 0 8px; } dt { color: #aab7cc; font-size: .8rem; } dd { margin: 5px 0 0; font-weight: 600; }.message { color: #aab7cc; margin: 16px 0 0; }
+pre { background: #080e19; border-radius: 8px; color: #cddcff; height: 300px; margin: 18px 0 0; overflow: auto; padding: 16px; white-space: pre-wrap; word-break: break-word; }
+@media (max-width: 640px) { .dashboard { padding: 28px 16px; }.controls { align-items: stretch; flex-direction: column; }.buttons button { flex: 1; } dl { grid-template-columns: 1fr; gap: 12px; } select, input { width: 100%; }.date-inputs { align-items: stretch; flex-direction: column; }.date-inputs span { display: none; } }

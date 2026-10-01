@@ -1,0 +1,5 @@
+smartapi-python
+PyOTP
+schedule
+websocket-client
+Flask
